@@ -1,3 +1,7 @@
+declare_args() {
+    lib_pthread = "/usr/lib64/libpthread.so"
+}
+
 include_dirs = [
     "inc",
     "inc/staticA",
@@ -39,8 +43,11 @@ shared_library("usePthread") {
         "src/usePthread.cpp",
     ]
 
-    ldflags = [
-        "-pthread",
+    # ldflags = [
+    #     "-pthread",
+    # ]
+    libs = [
+        lib_pthread,
     ]
 }
 
