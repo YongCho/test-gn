@@ -1,0 +1,44 @@
+include_dirs = [
+    "inc",
+    "inc/staticA",
+]
+
+executable("main") {
+    sources = [
+        "src/main.cpp",
+    ]
+
+    deps = [
+        ":foo",
+        ":bar",
+        ":staticA",
+    ]
+}
+
+shared_library("foo") {
+    sources = [
+        "src/foo.cpp",
+    ]
+
+    defines = [ "DEFINE_FOR_FOO" ]
+}
+
+shared_library("bar") {
+    sources = [
+        "src/bar.cpp",
+    ]
+
+    deps = [
+        ":foo",
+    ]
+}
+
+static_library("staticA") {
+    sources = [
+        "src/staticA/staticA.cpp",
+        "src/staticA/staticAOne.cpp",
+        "src/staticA/staticATwo.cpp",
+    ]
+
+    defines = [ "DEFINE_FOR_STATIC_A" ]
+}
