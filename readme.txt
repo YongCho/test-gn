@@ -1,1 +1,1 @@
-gn gen out
+./build.sh
