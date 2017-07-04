@@ -9,9 +9,9 @@ include_dirs = [
     "inc/staticA",
 ]
 
-print("lib_pthread         : " + lib_pthread)
-print("oracle_version      : " + oracle_version)
-print("third_party_source  : " + third_party_source)
+print("lib_pthread         : $lib_pthread")
+print("oracle_version      : $oracle_version")
+print("third_party_source  : $third_party_source")
 
 executable("main") {
     sources = [
