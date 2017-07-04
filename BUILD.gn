@@ -2,11 +2,6 @@ declare_args() {
     lib_pthread = ""
     oracle_version = ""
     third_party_source = ""
-    if(target_os == "linux") {
-        is_linux = true
-    } else {
-        is_linux = false
-    }
 }
 
 include_dirs = [
