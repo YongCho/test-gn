@@ -10,7 +10,7 @@ config("compiler_defaults") {
     ]
 }
 
-config("shared_object") {
+config("shared_lib_config") {
     cflags = [
         "-fPIC"
     ]

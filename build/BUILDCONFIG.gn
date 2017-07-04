@@ -24,7 +24,7 @@ set_defaults("static_library") {
   configs = [ "//build:compiler_defaults" ]
 }
 set_defaults("shared_library") {
-  configs = [ "//build:compiler_defaults", "//build:shared_object" ]
+  configs = [ "//build:compiler_defaults", "//build:shared_lib_config" ]
 }
 set_defaults("source_set") {
   configs = [ "//build:compiler_defaults" ]

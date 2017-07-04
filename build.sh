@@ -14,7 +14,7 @@ echo "gn_gen_args:"$gn_gen_args
 
 cd "${THIS_DIR}"
 gn gen "${BUILD_DIR}" --args="$gn_gen_args"
-ninja -C "${BUILD_DIR}"
+ninja -v -C "${BUILD_DIR}"
 mkdir -p "${BIN_DIR}"
 cp -f "${BUILD_DIR}"/main "${BIN_DIR}"
 cp -f "${BUILD_DIR}"/*.so "${BIN_DIR}"

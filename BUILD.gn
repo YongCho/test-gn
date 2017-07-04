@@ -2,6 +2,11 @@ declare_args() {
     lib_pthread = ""
     oracle_version = ""
     third_party_source = ""
+    if(target_os == "linux") {
+        is_linux = true
+    } else {
+        is_linux = false
+    }
 }
 
 include_dirs = [
@@ -13,6 +18,8 @@ defines = [
     "DEFINE_FOR_ALL"
 ]
 
+print("is_linux            : $is_linux")
+print("target_os           : $target_os")
 print("lib_pthread         : $lib_pthread")
 print("oracle_version      : $oracle_version")
 print("third_party_source  : $third_party_source")
