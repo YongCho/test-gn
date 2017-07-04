@@ -12,6 +12,7 @@ executable("main") {
         ":foo",
         ":bar",
         ":staticA",
+        ":usePthread",
     ]
 }
 
@@ -30,6 +31,16 @@ shared_library("bar") {
 
     deps = [
         ":foo",
+    ]
+}
+
+shared_library("usePthread") {
+    sources = [
+        "src/usePthread.cpp",
+    ]
+
+    ldflags = [
+        "-pthread",
     ]
 }
 

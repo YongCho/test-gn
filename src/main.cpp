@@ -2,6 +2,7 @@
 #include "foo.h"
 #include "bar.h"
 #include "staticA.h"
+#include "usePthread.h"
 
 int main(int argc, char *argv[])
 {
@@ -10,5 +11,7 @@ int main(int argc, char *argv[])
     foo();
     bar();
     staticA();
+    usePthread();
+
     return 0;
 }
