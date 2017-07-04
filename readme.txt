@@ -1,2 +1,1 @@
-bar depends on foo
-main depends on foo and bar
+gn gen out
