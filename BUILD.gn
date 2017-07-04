@@ -1,11 +1,17 @@
 declare_args() {
-    lib_pthread = "/usr/lib64/libpthread.so"
+    lib_pthread = ""
+    oracle_version = ""
+    third_party_source = ""
 }
 
 include_dirs = [
     "inc",
     "inc/staticA",
 ]
+
+print("lib_pthread         : " + lib_pthread)
+print("oracle_version      : " + oracle_version)
+print("third_party_source  : " + third_party_source)
 
 executable("main") {
     sources = [
