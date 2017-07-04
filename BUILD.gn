@@ -9,6 +9,10 @@ include_dirs = [
     "inc/staticA",
 ]
 
+defines = [
+    "DEFINE_FOR_ALL"
+]
+
 print("lib_pthread         : $lib_pthread")
 print("oracle_version      : $oracle_version")
 print("third_party_source  : $third_party_source")
@@ -31,7 +35,7 @@ shared_library("foo") {
         "src/foo.cpp",
     ]
 
-    defines = [ "DEFINE_FOR_FOO" ]
+    defines += [ "DEFINE_FOR_FOO" ]
 }
 
 shared_library("bar") {
@@ -64,5 +68,5 @@ static_library("staticA") {
         "src/staticA/staticATwo.cpp",
     ]
 
-    defines = [ "DEFINE_FOR_STATIC_A" ]
+    defines += [ "DEFINE_FOR_STATIC_A" ]
 }

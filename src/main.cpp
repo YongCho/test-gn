@@ -6,7 +6,13 @@
 
 int main(int argc, char *argv[])
 {
-    std::cout << "in main()" << std::endl;
+    using namespace std;
+    cout << "in main()" << endl;
+    #ifdef DEFINE_FOR_ALL
+    cout << "\"DEFINE_FOR_ALL\" seen from main()" << endl;
+    #else
+    cout << "ERROR: \"DEFINE_FOR_ALL\" not seen from main()" << endl;
+    #endif
 
     foo();
     bar();
