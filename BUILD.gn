@@ -82,8 +82,9 @@ shared_library("useMultipleLibs") {
         lib_boost_regex,
     ]
 
-    # Testing +=. Both syntax work.
+    # Testing +=.
 
+    # This works.
     # libraries_used = [
     #     lib_pthread,
     #     lib_boost_regex,
@@ -91,12 +92,19 @@ shared_library("useMultipleLibs") {
     # libs = []
     # libs += libraries_used
 
+    # This also works.
     # libs = [
     #     lib_pthread,
     # ]
     # libs += [
     #     lib_boost_regex,
     # ]
+
+    # libs = [
+    #     lib_pthread,
+    # ]
+    # This does not work. RHS must be a list. Do libs += [ lib_boost_regex ]
+    # libs += lib_boost_regex
 }
 
 static_library("staticA") {
