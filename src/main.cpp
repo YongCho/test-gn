@@ -3,6 +3,7 @@
 #include "bar.h"
 #include "staticA.h"
 #include "usePthread.h"
+#include "useMultipleLibs.h"
 
 int main(int argc, char *argv[])
 {
@@ -18,6 +19,7 @@ int main(int argc, char *argv[])
     bar();
     staticA();
     usePthread();
+    useMultipleLibs();
 
     return 0;
 }

@@ -1,5 +1,7 @@
 declare_args() {
     lib_pthread = ""
+    boost_include = ""
+    lib_boost_regex = ""
     oracle_version = ""
     third_party_source = ""
 }
@@ -16,6 +18,8 @@ defines = [
 print("is_linux            : $is_linux")
 print("target_os           : $target_os")
 print("lib_pthread         : $lib_pthread")
+print("boost_include       : $boost_include")
+print("lib_boost_regex     : $lib_boost_regex")
 print("oracle_version      : $oracle_version")
 print("third_party_source  : $third_party_source")
 
@@ -29,6 +33,7 @@ executable("main") {
         ":bar",
         ":staticA",
         ":usePthread",
+        ":useMultipleLibs",
     ]
 }
 
@@ -61,6 +66,37 @@ shared_library("usePthread") {
     libs = [
         lib_pthread,
     ]
+}
+
+shared_library("useMultipleLibs") {
+    sources = [
+        "src/useMultipleLibs.cpp",
+    ]
+
+    include_dirs += [
+        boost_include,
+    ]
+
+    libs = [
+        lib_pthread,
+        lib_boost_regex,
+    ]
+
+    # Testing +=. Both syntax work.
+
+    # libraries_used = [
+    #     lib_pthread,
+    #     lib_boost_regex,
+    # ]
+    # libs = []
+    # libs += libraries_used
+
+    # libs = [
+    #     lib_pthread,
+    # ]
+    # libs += [
+    #     lib_boost_regex,
+    # ]
 }
 
 static_library("staticA") {
